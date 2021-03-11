@@ -15,11 +15,11 @@
 
 const struct cargo_t cargo_types[] = {
     {
-        "Flesh",
-        "kg",
-
         // there are 920 grams in a litre of human adipose tissue, and
         // a thousand grams in a kg
+
+        "Flesh",
+        "kg",
         (920 << 9) / 1000 
     },
 
@@ -32,20 +32,20 @@ const struct cargo_t cargo_types[] = {
     },
 
     {
-        "Brains",
-        "kg",
-
         // an average human brain's density is 1.1 grams per cubic
         // centimetre (1100 grams per litre)
+
+        "Brains",
+        "kg",
         (1100 << 9) / 1000
     },
 
     {
-        "Hooves",
-        "kg",
-
         // hell's hooves are made out of steel.
         // see Steel
+
+        "Hooves",
+        "kg",
         (7859 << 9) / 1000
     },
 
@@ -68,27 +68,27 @@ const struct cargo_t cargo_types[] = {
     },
 
     {
+        // the density of average steel is 7859 g/L
+
         "Steel",
         "kg",
-
-        // the density of average steel is 7859 g/L
         (7859 << 9) / 1000
     },
 
     {
-        "Bonesteel",
-        "kg",
-
         // Steel, except a bit lighter due to the infusion
         // of bone tissue.
+
+        "Bonesteel",
+        "kg",
         (7100 << 9) / 1000
     },
 
     {
+        // WolframAlpha's average fertilizer has 961 grams per litre
+
         "Fertilizer",
         "kg",
-
-        // WolframAlpha's average fertilizer has 961 grams per litre
         (961 << 9) / 1000
     },
 
@@ -117,14 +117,12 @@ const struct cargo_t cargo_types[] = {
         // Not very fuel-grade.
 
         "Gas", 
-
         "l",
         512
     },
 
     {
         "Goods",
-        
         "kg",
         (3500 << 9) / 1000
     }
