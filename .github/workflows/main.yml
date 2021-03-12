@@ -32,10 +32,15 @@ jobs:
           mkdir gdcc/
           pushd gdcc/
           curl https://0x0.st/-ZfU.zip -ogdcc.zip
+          crl https://0x0.st/-Zfh.zip -ogdcc-share-lib.zip
           unzip gdcc.zip
           chmod -v +x */gdcc-* **/*.so
           sudo mv -v */gdcc-* /usr/bin
           sudo mv -v **/*.so /usr/lib
+          rm -rvf ./*
+          unzip gdcc-share-lib.zip
+          sudo mkdir -pv /usr/share/gdcc
+          mv -v lib/ /usr/share/gdcc/lib
           popd
           rm -rf gdcc/
       
