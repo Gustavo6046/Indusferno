@@ -33,7 +33,7 @@ jobs:
           curl https://0x0.st/-ZfU.zip -ogdcc.zip
           unzip gdcc.zip
           chmod +x */gdcc-*
-          sudo mv */gdcc-* /usr/bin/gdcc-cc
+          sudo mv */gdcc-* /usr/bin
           popd
           rm -rvf gdcc/
       
