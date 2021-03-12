@@ -1,0 +1,42 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Ninja Build
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install gdcc
+        shell: bash
+        working-directory: /tmp/
+        run: |
+          mkdir gdcc/
+          pushd gdcc/
+          curl https://pipelines.actions.githubusercontent.com/ymuBULL4ecBdBoWQbTBZ82RMYKCcsdQ8ryuQ7kPpKKcc4pSVJR/_apis/pipelines/1/runs/1/signedartifactscontent?artifactName=Build%20%28Linux%20x86-64%29&urlExpires=2021-03-12T00%3A58%3A06.1759302Z&urlSigningMethod=HMACV1&urlSignature=6f%2FYdnCQHQNTuvTi7%2BUzAh9X7CJUPqkSKgValiUL0Mo%3D -ogdcc.zip
+          unzip gdcc.zip
+          sudo mv CC/gdcc-cc /usr/bin/gdcc-cc
+          sudo mv LD/gdcc-ld /usr/bin/gdcc-ld
+          popd
+          rm -rvf gdcc/
+      
+      - name: Build with ninja
+        working-directory: ${{github-workspace}}
+        run: ninja
