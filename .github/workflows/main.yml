@@ -32,14 +32,14 @@ jobs:
           mkdir gdcc/
           pushd gdcc/
           # install gdcc bins and libs
-          curl https://0x0.st/-ZfU.zip -ogdcc.zip
-          unzip gdcc.zip
+          curl https://github.com/Gustavo6046/Indusferno/raw/ci-deps/gdcc-bins.zip -ogdcc-bins.zip
+          unzip gdcc-bins.zip
           chmod -v +x */gdcc-* **/*.so
           sudo mv -v */gdcc-* /usr/bin
           sudo mv -v **/*.so /usr/lib
           rm -rvf ./*
           # install gdcc headers
-          curl https://0x0.st/-Zfh.zip -ogdcc-share-lib.zip
+          curl https://github.com/Gustavo6046/Indusferno/raw/ci-deps/gdcc-share-lib.zip -ogdcc-share-lib.zip
           unzip gdcc-share-lib.zip
           sudo mkdir -pv /usr/share/gdcc
           sudo mv -v lib/ /usr/share/gdcc/lib
