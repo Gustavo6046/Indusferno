@@ -37,8 +37,8 @@ jobs:
           popd
           rm -rvf gdcc/
       
-      - name: Install ninja
-        run: sudo apt install ninja
+      - name: Install build dependencies
+        run: sudo apt install ninja-build
 
       - name: Build with ninja
         working-directory: ${{github.workspace}}
