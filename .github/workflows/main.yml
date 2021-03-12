@@ -28,6 +28,7 @@ jobs:
         shell: bash
         working-directory: /tmp/
         run: |
+          shopt -s globstar
           mkdir gdcc/
           pushd gdcc/
           curl https://0x0.st/-ZfU.zip -ogdcc.zip
@@ -36,7 +37,7 @@ jobs:
           sudo mv -v */gdcc-* /usr/bin
           sudo mv -v **/*.so /usr/lib
           popd
-          rm -rvf gdcc/
+          rm -rf gdcc/
       
       - name: Install build dependencies
         run: sudo apt install ninja-build
