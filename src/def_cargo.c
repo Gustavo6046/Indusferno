@@ -94,9 +94,8 @@ const struct cargo_t cargo_types[] = {
 
     {
         "Energy",
-        "l",
-
-        512 // I know, not very lifelike
+        "kJ",
+        (25400 << 9) // 25400 kJ required to boil 10L of water, in 1L of energy
     },
 
     {
