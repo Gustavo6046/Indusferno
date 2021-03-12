@@ -7,22 +7,25 @@ rule cc
 rule ld
     command = gdcc-ld --target-engine ZDoom $in -o $out
 
+build build/libGDCC.ir: makelib
+    lib = libGDCC
+build build/libc.ir: makelib
+    lib = libc
+
 build build/error.ir: cc src/error.c
 build build/industry.ir: cc src/industry.c
 build build/stations.ir: cc src/stations.c
 build build/def_cargo.ir: cc src/def_cargo.c
 build build/def_indus.ir: cc src/def_indus.c
 
-build build/libGDCC.ir: makelib
-    lib = libGDCC
-build build/libc.ir: makelib
-    lib = libc
-
 build build/infindus.o: ld $
+    # standard
+    build/libGDCC.ir $
+    build/libc.ir $
+    
+    # indusferno
     build/error.ir $
     build/industry.ir $
     build/stations.ir $
     build/def_cargo.ir $
     build/def_indus.ir $
-    build/libGDCC.ir $
-    build/libc.ir
