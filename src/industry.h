@@ -8,6 +8,10 @@
  * @copyright Copyright (c)Gustavo Ramos Rehermann 2021. The MIT License.
  */
 
+#ifndef INDUSTRY_H
+#define INDUSTRY_H
+
+
 #include <limits.h>
 #include <stddef.h>
 #include <stdio.h>
@@ -297,3 +301,8 @@ void industry_check_production(struct industry_t *const indus, const struct indu
  * @param amount Amount of this cargo to be accepted.
  */
 void industry_accept_cargo(size_t ind_industry, size_t ind_accept, float amount);
+
+size_t industry_spawn(size_t ind_indus_type, );
+
+
+#endif // INDUSTRY_H

@@ -8,6 +8,9 @@
  * @copyright Copyright (c)Gustavo Ramos Rehermann 2021. The MIT License.
  */
 
+#ifndef ERROR_H
+#define ERROR_H
+
 // Error codes.
 enum error_code_t {
     ERR_INDUSTRY_BAD_INDEX,
@@ -21,3 +24,6 @@ enum error_code_t {
  * @param error_code The code of the error to be printed.
  */
 void error(enum error_code_t error_code);
+
+
+#endif // ERROR_H

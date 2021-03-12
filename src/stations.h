@@ -8,8 +8,10 @@
  * @copyright Copyright (c)Gustavo Ramos Rehermann 2021. The MIT License.
  */
 
-#include <stddef.h>
+#ifndef STATIONS_H
+#define STATIONS_H
 
+#include <stddef.h>
 #include "cargo.h"
 
 /**
@@ -106,3 +108,6 @@ float stations_get_cargo_amount(struct station_t *const station, size_t cargo_ty
  * @brief All stations in the world.
  */
 extern struct station_t stations[];
+
+
+#endif // STATIONS_H

@@ -8,6 +8,10 @@
  * @copyright Copyright (c)Gustavo Ramos Rehermann 2021. The MIT License.
  */
 
+#ifndef CARGO_H
+#define CARGO_H
+
+
 /**
  * @brief The maximum number of cargo types.
  */
@@ -51,3 +55,6 @@ struct cargo_t {
  * @brief A list of all known cargo types.
  */
 extern const struct cargo_t cargo_types[];
+
+
+#endif // CARGO_H
