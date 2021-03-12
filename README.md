@@ -14,3 +14,23 @@ cargo!
 
 Who would know those weird types were so ingenious in the
 industrialization of the underworld.
+
+## Building
+
+To build the Indusferno code, use Ninja. A build.ninja file is provided to
+build the project.
+
+```console
+$ ninja
+$ file build/infindus.o
+build/infindus.o: GLS_BINARY_LSB_FIRST
+```
+
+## Contributing
+
+When adding any source files, pleas update build.ninja correspondingly.
+
+## License
+
+This project is licensed under the terms of the MIT Software License.
+For details, please see [LICENSE](LICENSE).
