@@ -20,7 +20,7 @@ const struct cargo_t cargo_types[] = {
 
         "Flesh",
         "kg",
-        (920 << 9) / 1000 
+        (920 * 512) / 1000 
     },
 
     {
@@ -37,7 +37,7 @@ const struct cargo_t cargo_types[] = {
 
         "Brains",
         "kg",
-        (1100 << 9) / 1000
+        (1100 * 512) / 1000
     },
 
     {
@@ -46,7 +46,7 @@ const struct cargo_t cargo_types[] = {
 
         "Hooves",
         "kg",
-        (7859 << 9) / 1000
+        (7859 * 512) / 1000
     },
 
     {
@@ -72,7 +72,7 @@ const struct cargo_t cargo_types[] = {
 
         "Steel",
         "kg",
-        (7859 << 9) / 1000
+        (7859 * 512) / 1000
     },
 
     {
@@ -81,7 +81,7 @@ const struct cargo_t cargo_types[] = {
 
         "Bonesteel",
         "kg",
-        (7100 << 9) / 1000
+        (7100 * 512) / 1000
     },
 
     {
@@ -89,13 +89,13 @@ const struct cargo_t cargo_types[] = {
 
         "Fertilizer",
         "kg",
-        (961 << 9) / 1000
+        (961 * 512) / 1000
     },
 
     {
         "Energy",
         "kJ",
-        (25400 << 9) // 25400 kJ required to boil 10L of water, in 1L of energy
+        (25400 * 512) // 25400 kJ required to boil 10L of water, in 1L of energy
     },
 
     {
@@ -123,6 +123,6 @@ const struct cargo_t cargo_types[] = {
     {
         "Goods",
         "kg",
-        (3500 << 9) / 1000
+        (3500 * 512) / 1000
     }
 };
