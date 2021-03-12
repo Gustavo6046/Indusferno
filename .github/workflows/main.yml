@@ -32,8 +32,9 @@ jobs:
           pushd gdcc/
           curl https://0x0.st/-ZfU.zip -ogdcc.zip
           unzip gdcc.zip
-          chmod +x */gdcc-*
-          sudo mv */gdcc-* /usr/bin
+          chmod -v +x */gdcc-* */*.so
+          sudo mv -v */gdcc-* /usr/bin
+          sudo mv -v */*.so /usr/lib
           popd
           rm -rvf gdcc/
       
