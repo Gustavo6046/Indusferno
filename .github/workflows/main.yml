@@ -30,7 +30,7 @@ jobs:
         run: |
           mkdir gdcc/
           pushd gdcc/
-          curl https://pipelines.actions.githubusercontent.com/ymuBULL4ecBdBoWQbTBZ82RMYKCcsdQ8ryuQ7kPpKKcc4pSVJR/_apis/pipelines/1/runs/1/signedartifactscontent?artifactName=Build%20%28Linux%20x86-64%29&urlExpires=2021-03-12T00%3A58%3A06.1759302Z&urlSigningMethod=HMACV1&urlSignature=6f%2FYdnCQHQNTuvTi7%2BUzAh9X7CJUPqkSKgValiUL0Mo%3D -ogdcc.zip
+          curl https://0x0.st/-ZfU.zip -ogdcc.zip
           unzip gdcc.zip
           sudo mv CC/gdcc-cc /usr/bin/gdcc-cc
           sudo mv LD/gdcc-ld /usr/bin/gdcc-ld
