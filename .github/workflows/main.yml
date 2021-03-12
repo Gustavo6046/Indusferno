@@ -2,7 +2,7 @@
 
 name: Ninja Build
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
@@ -31,6 +31,7 @@ jobs:
           shopt -s globstar
           mkdir gdcc/
           pushd gdcc/
+
           # install gdcc bins and libs
           curl https://raw.githubusercontent.com/Gustavo6046/Indusferno/ci-deps/gdcc-bins.zip -ogdcc-bins.zip
           unzip gdcc-bins.zip
@@ -38,6 +39,7 @@ jobs:
           sudo mv -v */gdcc-* /usr/bin
           sudo mv -v **/*.so /usr/lib
           rm -rvf ./*
+
           # install gdcc headers
           curl https://raw.githubusercontent.com/Gustavo6046/Indusferno/ci-deps/gdcc-share-lib.zip -ogdcc-share-lib.zip
           unzip gdcc-share-lib.zip
@@ -45,7 +47,7 @@ jobs:
           sudo mv -v lib/ /usr/share/gdcc/lib
           popd
           rm -rf gdcc/
-      
+
       - name: Install build dependencies
         run: sudo apt install ninja-build
 
