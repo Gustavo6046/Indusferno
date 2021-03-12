@@ -3,7 +3,7 @@
  * @author Gustavo Rehermann (rehermann6046@gmail.com)
  * @brief Map spot graph implementation.
  * @version added in 0.1
- * @date 2021-03-11
+ * @date 2021-03-12
  *
  * @copyright Copyright (c)Gustavo Ramos Rehermann 2021. The MIT License.
  */
