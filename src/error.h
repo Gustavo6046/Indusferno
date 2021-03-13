@@ -18,12 +18,14 @@ enum error_code_t {
     ERR_INDUSTRY_BAD_ACCEPT,
 };
 
+#define error(error_code) { _error(error_code); return; }
+
 /**
  * @brief Prints an error.
  * 
  * @param error_code The code of the error to be printed.
  */
-void error(enum error_code_t error_code);
+void _error(enum error_code_t error_code);
 
 
 #endif // ERROR_H

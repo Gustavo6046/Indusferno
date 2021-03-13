@@ -8,7 +8,6 @@
  * @copyright Copyright (c)Gustavo Ramos Rehermann 2021. The MIT License.
  */
 
-#include <ACS_ZDoom.h>
 #include <stdio.h>
 
 #include "error.h"
@@ -20,6 +19,8 @@ static const char *const error_strings[] = {
     "Industry does not have accepted-cargo type passed"
 };
 
-void error(enum error_code_t error_code) {
+void _error(enum error_code_t error_code) {
+#ifdef DEBUG
     printf("\\cx[WARNING] %s\\c-", error_strings[error_code]);
+#endif
 }

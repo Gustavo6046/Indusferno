@@ -124,17 +124,17 @@ void industry_accept_cargo(size_t ind_industry, size_t ind_accept, float amount)
     struct industry_t *const indus = &industries[ind_industry];
 
     if (indus->type == -1) {
-        error(ERR_INDUSTRY_BAD_INDEX); return;
+        error(ERR_INDUSTRY_BAD_INDEX);
     }
 
     const struct industry_type_t *const indtype = &industry_types[indus->type];
 
     if (indtype->supply_type == ISUPTYPE_UNKNOWN) {
-        error(ERR_INDUSTRY_BAD_TYPE); return;
+        error(ERR_INDUSTRY_BAD_TYPE);
     }
 
     if (indtype->accepts[ind_accept] == -1) {
-        error(ERR_INDUSTRY_BAD_ACCEPT); return;
+        error(ERR_INDUSTRY_BAD_ACCEPT);
     }
 
     indus->material[ind_accept] += amount;
