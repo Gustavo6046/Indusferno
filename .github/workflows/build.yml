@@ -1,4 +1,4 @@
-name: Ninja Build
+name: GDCC Build (Ninja)
 
 on:
   push:
