@@ -51,7 +51,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: acs-build
-          path: ${{github.workspace}}/build/
+          path: ${{github.workspace}}/bin/
 
   assemble:
     name: Assemble (with ZDCode Zake)
@@ -73,7 +73,7 @@ jobs:
         with:
           name: acs-build
           latest: true
-          path: ${{github.workspace}}/build
+          path: ${{github.workspace}}/bin/
 
       - name: Run ZDCode
         working-directory: ${{github.workspace}}
@@ -83,4 +83,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: 
-          path: ${{github.workspace}}/doc
+          path: ${{github.workspace}}/pkg/
