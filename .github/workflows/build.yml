@@ -46,3 +46,9 @@ jobs:
       - name: Build with ninja
         working-directory: ${{github.workspace}}
         run: ninja
+
+      - name: Upload built ACS objects
+        uses: actions/upload-artifact@v2
+        with:
+          name: acs-build
+          path: ${{github.workspace}}/build/
