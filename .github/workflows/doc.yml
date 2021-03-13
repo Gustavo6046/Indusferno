@@ -1,0 +1,55 @@
+name: Doxygen Documentation
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  doc:
+    name: Doxygen
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install doxygen
+        run: sudo apt install doxygen
+
+      - name: Run doxygen
+        working-directory: ${{github.workspace}}
+        run: doxygen Doxyfile
+
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: documentation.zip
+          path: ${{github.workspace}}/doc
+      
+      - name: Push to doc branch
+        working-directory: ${{github.workspace}}/doc
+        shell: bash
+        run: |
+          # install git if not available
+          which git 2>&1 >/dev/null || {
+            echo '[git not found, installing]' && \
+            sudo apt install git
+          }
+
+          # clone docs branch
+          git clone --branch docs git@github.com:GITHUB_REPOSITORY docrepo/
+          cd docrepo/
+
+          # delete previous files
+          rm -rvf ./* || :
+          
+          # copy new ones
+          cp -rv ../html/ ../latex/ .
+
+          # add, commit and push
+          git add ./html/ ./latex/
+          git commit -m "Updated documentation to head of master @ $GITHUB_SHA"
+          git push

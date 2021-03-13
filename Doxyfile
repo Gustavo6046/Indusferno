@@ -1,0 +1,3 @@
+SOURCES = src/
+HTML_OUTPUT            = doc/html
+LATEX_OUTPUT           = doc/latex
