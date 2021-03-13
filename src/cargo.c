@@ -1,12 +1,12 @@
 /**
- * @file def_cargo.c
+ * @file cargo.c
  * @author Gustavo Rehermann (rehermann6046@gmail.com)
  * @brief Cargo type definitions.
  * @version added in 0.1
  * @date 2021-03-11
- * 
+ *
  * @copyright Copyright (c)Gustavo Ramos Rehermann 2021. The MIT License.
- * 
+ *
  * All cargo definitions.
  */
 
@@ -20,14 +20,14 @@ const struct cargo_t cargo_types[] = {
 
         "Flesh",
         "kg",
-        (920 * 512) / 1000 
+        (920 * 512) / 1000
     },
 
     {
         "Bones",
         "l",
 
-        // in litres    
+        // in litres
         512
     },
 
@@ -115,7 +115,7 @@ const struct cargo_t cargo_types[] = {
         // 'Necrogas' on the other hand sounds too much like a nerve agent.
         // Not very fuel-grade.
 
-        "Gas", 
+        "Gas",
         "l",
         512
     },
@@ -124,5 +124,18 @@ const struct cargo_t cargo_types[] = {
         "Goods",
         "kg",
         (3500 * 512) / 1000
+    },
+
+    {
+        // The density of silicon is 2330 g/L.
+        "Silicon",
+        "kg",
+        (2330 * 512) / 1000
+    },
+
+    {
+        "Microchips",
+        "l",
+        512
     }
 };

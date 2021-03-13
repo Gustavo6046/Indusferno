@@ -2,10 +2,12 @@ rule makelib
     command = gdcc-makelib --target-engine ZDoom $lib -c -o $out
 
 rule cc-rel
-    command = gdcc-cc --target-engine ZDoom -c $in -o $out
+    depfile = $out.d
+    command = gcc -x c -c -o $out $in -MD -MF $out.d && rm $out && gdcc-cc --target-engine ZDoom -c $in -o $out
 
 rule cc-dbg
-    command = gdcc-cc --target-engine ZDoom -DDEBUG -c $in -o $out
+    depfile = $out.d
+    command = gcc -x c -c -o $out $in -DDEBUG -MD -MF $out.d && rm $out && gdcc-cc --target-engine ZDoom -DDEBUG -c $in -o $out
 
 rule ld
     command = gdcc-ld --target-engine ZDoom $in -o $out
@@ -18,16 +20,14 @@ build build/libc.ir: makelib
 build build/rel/error.ir: cc-rel src/error.c
 build build/rel/industry.ir: cc-rel src/industry.c
 build build/rel/stations.ir: cc-rel src/stations.c
-build build/rel/def_cargo.ir: cc-rel src/def_cargo.c
-build build/rel/def_indus.ir: cc-rel src/def_indus.c
+build build/rel/cargo.ir: cc-rel src/cargo.c
 build build/rel/place.ir: cc-rel src/place.c
 build build/rel/company.ir: cc-rel src/company.c
 
 build build/dbg/error.ir: cc-dbg src/error.c
 build build/dbg/industry.ir: cc-dbg src/industry.c
 build build/dbg/stations.ir: cc-dbg src/stations.c
-build build/dbg/def_cargo.ir: cc-dbg src/def_cargo.c
-build build/dbg/def_indus.ir: cc-dbg src/def_indus.c
+build build/dbg/cargo.ir: cc-dbg src/cargo.c
 build build/dbg/place.ir: cc-dbg src/place.c
 build build/dbg/company.ir: cc-dbg src/company.c
 
@@ -37,8 +37,7 @@ build bin/dbg/infindus.o: ld $
     build/dbg/error.ir $
     build/dbg/industry.ir $
     build/dbg/stations.ir $
-    build/dbg/def_cargo.ir $
-    build/dbg/def_indus.ir $
+    build/dbg/cargo.ir $
     build/dbg/place.ir $
     build/dbg/company.ir
 
@@ -48,8 +47,7 @@ build bin/rel/infindus.o: ld $
     build/rel/error.ir $
     build/rel/industry.ir $
     build/rel/stations.ir $
-    build/rel/def_cargo.ir $
-    build/rel/def_indus.ir $
+    build/rel/cargo.ir $
     build/rel/place.ir $
     build/rel/company.ir
 

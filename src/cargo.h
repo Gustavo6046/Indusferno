@@ -4,12 +4,14 @@
  * @brief Cargo.
  * @version added in 0.1
  * @date 2021-03-11
- * 
+ *
  * @copyright Copyright (c)Gustavo Ramos Rehermann 2021. The MIT License.
  */
 
 #ifndef CARGO_H
 #define CARGO_H
+
+#include <stddef.h>
 
 
 /**
@@ -19,7 +21,7 @@
 
 
 /**
- * @brief A known cargo type. 
+ * @brief A known cargo type.
  */
 struct cargo_t {
     /**
@@ -29,10 +31,10 @@ struct cargo_t {
 
     /**
      * @brief Cargo-specific unit of amount.
-     * 
+     *
      * Every cargo is internally amounted in Cargo Units. However,
      * cargos may specify their own unit to display to the player.
-     * 
+     *
      * If 'unit' is an empty string (where the first byte is a
      * null byte, and thus strlen(unit) is zero), the amount
      * displayed should be in regular Cargo Units. The usual
@@ -44,7 +46,7 @@ struct cargo_t {
 
     /**
      * @brief Cargo-specific unit conversion rate.
-     * 
+     *
      * How many of the the cargo-specific unit exist in 512 Cargo
      * Units of this cargo type.
      */
@@ -55,6 +57,11 @@ struct cargo_t {
  * @brief A list of all known cargo types.
  */
 extern const struct cargo_t cargo_types[];
+
+/**
+ * @brief An index into a cargo type.
+ */
+typedef size_t cargo_handle_t;
 
 
 #endif // CARGO_H

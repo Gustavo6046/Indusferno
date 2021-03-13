@@ -4,9 +4,9 @@
  * @brief Station logic.
  * @version added in 0.1
  * @date 2021-03-11
- * 
+ *
  * @copyright Copyright (c)Gustavo Ramos Rehermann 2021. The MIT License.
- * 
+ *
  * The logic that governs stations and how they hold cargo and interact
  * with vehicles in them.
  */
@@ -16,13 +16,30 @@
 #include "stations.h"
 
 
-struct station_t stations[MAX_STATIONS];
+/**
+ * @brief All stations in the world.
+ */
+static struct station_t stations[MAX_STATIONS];
 
-int num_stations;
+/**
+ * @brief Number of stations in the world.
+ */
+static int num_stations;
 
 
-void station_add_cargo(size_t ind_station, size_t cargo_type, int origin, float amount) {
+static error_return_t _station_check_index(station_handle_t ind_station, const char *const ctx) {
+    if (ind_station < num_stations) {
+        erroric(ERR_STATION_BAD_INDEX, ctx);
+    }
+
+    return 0;
+}
+
+error_return_t station_add_cargo(station_handle_t ind_station, size_t cargo_type, int origin, float amount) {
     int i;
+
+    errcli(_station_check_index(ind_station, "station_add_cargo"));
+
     struct station_load_t *load;
     struct station_t *station;
 
@@ -35,7 +52,7 @@ void station_add_cargo(size_t ind_station, size_t cargo_type, int origin, float 
     for (i = 0; i < station->num_cargo_loads; i++) {
         if (station->cargo_loads[i].cargo_type == cargo_type && station->cargo_loads[i].origin == origin) {
             station->cargo_loads[i].amount += amount;
-            return;
+            return 0;
         }
     }
 
@@ -44,17 +61,22 @@ void station_add_cargo(size_t ind_station, size_t cargo_type, int origin, float 
     load->amount = amount;
     load->cargo_type = cargo_type;
     load->origin = origin;
+
+    return 0;
 }
 
-float stations_get_cargo_amount(struct station_t *const station, size_t cargo_type) {
+error_return_t station_get_cargo_amount(station_handle_t ind_station, size_t cargo_type, float *amount) {
     int i;
-    float amount = 0;
+
+    errcli(_station_check_index(ind_station, "station_get_cargo_amount"));
+
+    const struct station_t *station = &stations[ind_station];
 
     for (i = 0; i < station->num_cargo_loads; i++) {
         if (station->cargo_loads[i].cargo_type == cargo_type) {
-            amount += station->cargo_loads[i].amount;
+            *amount += station->cargo_loads[i].amount;
         }
     }
 
-    return amount;
+    return 0;
 }

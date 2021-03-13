@@ -117,7 +117,14 @@ pre-built release and went from there, though; see the Downloading
 section above on how to do that precisely!
 
 To build the ACS part of Indusferno code, use Ninja. A build.ninja file
-is provided to build the project.
+is provided to build the project. You will also need to have the
+[GDCC compiler suite](https://forum.zdoom.org/viewtopic.php?t=32078)
+installed, if you don't have yet. You will also need GCC, which is used
+by the build system to generate depfiles before actually compiling the
+code, which are used when checking for changes in the header files.
+
+Anyway, to perform a _full_ Ninja build (i.e. of both debug and
+release), simply invoke the `ninja` command:
 
 ```console
 $ ninja

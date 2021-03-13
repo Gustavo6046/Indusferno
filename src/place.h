@@ -4,9 +4,9 @@
  * @brief Map spot graph.
  * @version added in 0.1
  * @date 2021-03-12
- * 
+ *
  * An list of locations in the map where industries can spawn.
- * 
+ *
  * Each location has a list of edges to other nearby locations,
  * preventing industries with matching accept types from spawning
  * too close to industries with matching supply types, in a sort of
@@ -18,7 +18,8 @@
 #ifndef PLACE_H
 #define PLACE_H
 
-#include "stddef.h"
+#include <stddef.h>
+#include "error.h"
 
 
 /**
@@ -26,30 +27,61 @@
  */
 struct spot_t {
     /**
-     * @brief X and Y position of this spot in the world.
+     * @brief X coordinate of the position of this spot in the world.
      */
-    float x, y;
+    float x;
+
+    /**
+     * @brief Y coordinate of the position of this spot in the world.
+     */
+    float y;
 };
 
+/**
+ * @brief The max number of spots that can be defined within the world.
+ */
 #define MAX_SPOTS 512
+
+/**
+ * @brief The max number of spots that can be linked to a single tile.
+ */
 #define MAX_SPOTS_PER_TILE 4
+
+/**
+ * @brief The max number of spotmap tiles that can be in a bucket.
+ */
 #define MAX_SPOT_TILES_PER_BUCKET 64
-#define MAX_SPOT_BUCKETS_PER_MAP 40
+
+/**
+ * @brief The number of spotmap buckets in a spotmap.
+ */
+#define NUM_SPOT_BUCKETS_PER_MAP 40
+
+/**
+ * @brief The width of a spot tile, along the X and Y axes.
+ */
 #define SPOT_TILE_WIDTH 1024
 
 /**
  * @brief A tile subdivision of a spotmap.
- * 
+ *
  * A spotmap is a way to index a spot by its proximity to
  * a region along the X and Y axes.
  */
 struct spotmap_tile_t {
     /**
-     * @brief Minimum coordinates of spotmap tile.
-     * 
+     * @brief X coordinate of the position of this spotmap tile.
+     *
      * Used when calculating which spots go in which spotmap tiles.
      */
-    int x, y;
+    int x;
+
+    /**
+     * @brief Y coordinate of the position of this spotmap tile.
+     *
+     * Used when calculating which spots go in which spotmap tiles.
+     */
+    int y;
 
     /**
      * @brief Spots linked to in this spotmap tile.
@@ -79,7 +111,7 @@ struct spotmap_bucket_t {
 
 /**
  * @brief A spotmap.
- * 
+ *
  * Akin to a hashmap, a spotmap is a way to index a spot by its
  * proximity to a region along the X and Y axes. It is used to
  * reduce the number of computations needed to find industries
@@ -89,24 +121,22 @@ struct spotmap_t {
     /**
      * @brief The list of spotmap buckets in this spotmap.
      */
-    struct spotmap_bucket_t buckets[MAX_SPOT_BUCKETS_PER_MAP];
+    struct spotmap_bucket_t buckets[NUM_SPOT_BUCKETS_PER_MAP];
 };
-
-/**
- * @brief All defined spots in the world.
- */
-extern struct spot_t place_spots[];
 
 /**
  * @brief The number of all spots defined in the world.
  */
 extern size_t place_num_spots;
 
+/**
+ * @brief An index handle to a spot.
+ */
 typedef size_t spot_handle_t;
 
 /**
  * @brief Define a new spot.
- * 
+ *
  * @param x X location of this spot.
  * @param y Y location of this spot.
  * @return size_t The opaque handle index to this spot.
@@ -115,19 +145,19 @@ spot_handle_t make_spot(float x, float y);
 
 /**
  * @brief Links a spot to all tiles within a radius from it.
- * 
+ *
  * @param ind_spot The opaque handle index to the spot.
  * @param radius The radius around the spot within which to link tiles.
  */
-void spot_link(spot_handle_t ind_spot, float radius);
+error_return_t spot_link(spot_handle_t ind_spot, float radius);
 
 /**
  * @brief Unlinks a spot from all tiles within a radius from it.
- * 
+ *
  * @param ind_spot The opaque handle index to the spot.
  * @param radius The radius around the spot within which to unlink tiles.
  */
-void spot_unlink(spot_handle_t ind_spot, float radius);
+error_return_t spot_unlink(spot_handle_t ind_spot, float radius);
 
 
 #endif //PLACE_H

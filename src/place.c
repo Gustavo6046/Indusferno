@@ -9,11 +9,12 @@
  */
 
 #include "place.h"
+#include "util.h"
 
 
 static struct spotmap_t place_spotmap;
 
-struct spot_t place_spots[MAX_SPOTS];
+static struct spot_t place_spots[MAX_SPOTS];
 size_t place_num_spots = 0;
 
 
@@ -21,11 +22,10 @@ static int hash_coords(int x, int y) {
     return ((x & 0xD555) << 1) | (y & 0x5555);
 }
 
-#define floordiv(a, b) ( (int) ((a) > 0 ? (a) : ((a) - (b))) / (b) )
 
 static struct spotmap_tile_t *spot_find_tile(int x, int y) {
     const int hash = hash_coords(x, y);
-    struct spotmap_bucket_t *const bucket = &place_spotmap.buckets[hash % MAX_SPOT_BUCKETS_PER_MAP];
+    struct spotmap_bucket_t *const bucket = &place_spotmap.buckets[hash % NUM_SPOT_BUCKETS_PER_MAP];
     size_t i;
 
     for (i = 0; i < bucket->num_tiles; i++) {
@@ -42,17 +42,30 @@ static struct spotmap_tile_t *spot_find_tile(int x, int y) {
     tile->x = x;
     tile->y = y;
     tile->num_spots = 0;
-    
+
     return tile;
 }
 
-typedef void (*_spot_iterator_callback_t)(spot_handle_t ind_spot, float radius, struct spotmap_tile_t *const tile, int x, int y);
+static error_return_t _spot_check_index(spot_handle_t ind_spot, const char *const ctx) {
+    if (ind_spot < place_num_spots) {
+        erroric(ERR_PLACE_BAD_SPOT_INDEX, ctx);
+    }
 
-static void _spot_link_callback(spot_handle_t ind_spot, float radius, struct spotmap_tile_t *const tile, int x, int y) {
-    tile->spots[tile->num_spots++] = ind_spot;
+    return 0;
 }
 
-static void _spot_unlink_callback(spot_handle_t ind_spot, float radius, struct spotmap_tile_t *const tile, int x, int y) {
+/**
+ * @brief A spot tile iterator callback.
+ */
+typedef error_return_t (*_spot_iterator_callback_t)(spot_handle_t ind_spot, float radius, struct spotmap_tile_t *const tile, int x, int y);
+
+static error_return_t _spot_link_callback(spot_handle_t ind_spot, float radius, struct spotmap_tile_t *const tile, int x, int y) {
+    tile->spots[tile->num_spots++] = ind_spot;
+
+    return 0;
+}
+
+static error_return_t _spot_unlink_callback(spot_handle_t ind_spot, float radius, struct spotmap_tile_t *const tile, int x, int y) {
     static int i;
 
     tile->spots[tile->num_spots++] = ind_spot;
@@ -67,7 +80,7 @@ static void _spot_unlink_callback(spot_handle_t ind_spot, float radius, struct s
 
     if (i == tile->num_spots) {
         // not found
-        return;
+        erroric(ERR_PLACE_UNLINK_SPOT_NOT_FOUND, "_spot_unlink_callback");
     }
 
     // move all other spots back a slot
@@ -77,9 +90,11 @@ static void _spot_unlink_callback(spot_handle_t ind_spot, float radius, struct s
     }
 
     tile->num_spots--;
+
+    return 0;
 }
 
-static void _spot_tile_iter(spot_handle_t ind_spot, float radius, _spot_iterator_callback_t iterator) {
+static error_return_t _spot_tile_iter(spot_handle_t ind_spot, float radius, _spot_iterator_callback_t iterator) {
     const struct spot_t *spot = &place_spots[ind_spot];
 
     int min_x = floordiv((spot->x - radius), SPOT_TILE_WIDTH);
@@ -92,20 +107,34 @@ static void _spot_tile_iter(spot_handle_t ind_spot, float radius, _spot_iterator
         for (x = min_x; x <= max_x; x++) {
             struct spotmap_tile_t *const tile = spot_find_tile(x, y);
 
-            iterator(ind_spot, radius, tile, x, y);
+            errcli(iterator(ind_spot, radius, tile, x, y));
         }
     }
+
+    return 0;
 }
 
-void spot_link(spot_handle_t ind_spot, float radius) {
-    _spot_tile_iter(ind_spot, radius, _spot_link_callback);
+error_return_t spot_link(spot_handle_t ind_spot, float radius) {
+    errcli(_spot_check_index(ind_spot, "spot_link"));
+
+    errcli(_spot_tile_iter(ind_spot, radius, _spot_link_callback));
+
+    return 0;
 }
 
-void spot_unlink(spot_handle_t ind_spot, float radius) {
-    _spot_tile_iter(ind_spot, radius, _spot_unlink_callback);
+error_return_t spot_unlink(spot_handle_t ind_spot, float radius) {
+    errcli(_spot_check_index(ind_spot, "spot_unlink"));
+
+    errcli(_spot_tile_iter(ind_spot, radius, _spot_unlink_callback));
+
+    return 0;
 }
 
 size_t make_spot(float x, float y) {
+    if (place_num_spots >= MAX_SPOTS) {
+        errorac(ERR_PLACE_MAXED_SPOTS, -1, "make_spot");
+    }
+
     place_spots[place_num_spots].x = x;
     place_spots[place_num_spots].y = y;
 
