@@ -76,7 +76,7 @@ jobs:
 
       - name: Run ZDCode
         working-directory: ${{github.workspace}}
-        run: python3 -m zdcode .
+        run: python3 -m zdcode
       
       - name: Upload built packages
         uses: actions/upload-artifact@v2
