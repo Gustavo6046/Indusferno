@@ -80,7 +80,7 @@ LZDoom, in a folder with `doom2.wad` in it:
 
 ```console
 C:\> cd C:\LZDoom
-C:\LZDoom\> lzdoom.exe -iwad doom2.wad -file Indusferno-rel-assets.pk3 -file Indusferno-rel-code.pk3a
+C:\LZDoom\> lzdoom.exe -iwad doom2.wad -file Indusferno-rel-assets.pk3 -file Indusferno-rel-code.pk3
 ```
 
 * To run this mod on **Linux**, the quickiest and most direct, way is
@@ -98,7 +98,7 @@ $ sudo dnf install lzdoom # on Fedora
 $ sudo pacman -S lzdoom   # on Arch Linux, etc.
 
 # to run the mod, invoke your source port of choice with your files, eg
-$ lzdoom -iwad doom2.wad -file Indusferno-rel-assets.pk3 -file Indusferno-rel-code.pk3a
+$ lzdoom -iwad doom2.wad -file Indusferno-rel-assets.pk3 -file Indusferno-rel-code.pk3
 ```
 
 
