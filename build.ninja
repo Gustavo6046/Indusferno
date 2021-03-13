@@ -1,8 +1,11 @@
 rule makelib
     command = gdcc-makelib --target-engine ZDoom $lib -c -o $out
 
-rule cc
+rule cc-rel
     command = gdcc-cc --target-engine ZDoom -c $in -o $out
+
+rule cc-dbg
+    command = gdcc-cc --target-engine ZDoom -DDEBUG -c $in -o $out
 
 rule ld
     command = gdcc-ld --target-engine ZDoom $in -o $out
@@ -12,24 +15,44 @@ build build/libGDCC.ir: makelib
 build build/libc.ir: makelib
     lib = libc
 
-build build/error.ir: cc src/error.c
-build build/industry.ir: cc src/industry.c
-build build/stations.ir: cc src/stations.c
-build build/def_cargo.ir: cc src/def_cargo.c
-build build/def_indus.ir: cc src/def_indus.c
-build build/place.ir: cc src/place.c
-build build/company.ir: cc src/company.c
+build build/rel/error.ir: cc-rel src/error.c
+build build/rel/industry.ir: cc-rel src/industry.c
+build build/rel/stations.ir: cc-rel src/stations.c
+build build/rel/def_cargo.ir: cc-rel src/def_cargo.c
+build build/rel/def_indus.ir: cc-rel src/def_indus.c
+build build/rel/place.ir: cc-rel src/place.c
+build build/rel/company.ir: cc-rel src/company.c
 
-build build/infindus.o: ld $
-    # standard
+build build/dbg/error.ir: cc-dbg src/error.c
+build build/dbg/industry.ir: cc-dbg src/industry.c
+build build/dbg/stations.ir: cc-dbg src/stations.c
+build build/dbg/def_cargo.ir: cc-dbg src/def_cargo.c
+build build/dbg/def_indus.ir: cc-dbg src/def_indus.c
+build build/dbg/place.ir: cc-dbg src/place.c
+build build/dbg/company.ir: cc-dbg src/company.c
+
+build build/dbg/infindus.o: ld $
     build/libGDCC.ir $
     build/libc.ir $
-    
-    # indusferno
-    build/error.ir $
-    build/industry.ir $
-    build/stations.ir $
-    build/def_cargo.ir $
-    build/def_indus.ir $
-    build/place.ir
-    build/company.ir
+    build/dbg/error.ir $
+    build/dbg/industry.ir $
+    build/dbg/stations.ir $
+    build/dbg/def_cargo.ir $
+    build/dbg/def_indus.ir $
+    build/dbg/place.ir $
+    build/dbg/company.ir
+
+build build/rel/infindus.o: ld $
+    build/libGDCC.ir $
+    build/libc.ir $
+    build/rel/error.ir $
+    build/rel/industry.ir $
+    build/rel/stations.ir $
+    build/rel/def_cargo.ir $
+    build/rel/def_indus.ir $
+    build/rel/place.ir $
+    build/rel/company.ir
+
+build build-dbg: phony build/dbg/infindus.o
+build build-rel: phony build/rel/infindus.o
+default build-dbg build-rel
