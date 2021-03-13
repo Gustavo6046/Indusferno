@@ -14,9 +14,10 @@
 
 
 static const char *const error_strings[] = {
-    "Industry does not exist with index passed",
+    "No industry exists with index passed",
     "Industry type is unknown",
-    "Industry does not have accepted-cargo type passed"
+    "Industry does not have accepted-cargo type passed",
+    "No company exists with index passed",
 };
 
 void _error(enum error_code_t error_code) {
