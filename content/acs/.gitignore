@@ -1,3 +1,0 @@
-# This folder exists for CI builds and their artifacts.
-# Please keep it this way.
-!.gitignore
