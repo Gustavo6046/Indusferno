@@ -1,3 +1,5 @@
 /.vscode/
 /build/
 .ninja_log
+
+*.pk3

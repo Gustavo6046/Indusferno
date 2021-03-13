@@ -1,3 +1,4 @@
 # This dummy folder holds outputs produced by ZDCode's Zake build
 # system on CI runs. Please keep it this way.
+*
 !.gitignore

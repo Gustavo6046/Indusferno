@@ -1,4 +1,5 @@
 # This folder exists for CI builds, when putting the objects produced
 # by a successful Ninja/gdcc build. They are later included by Zake.
 # Please keep it this way.
+*
 !.gitignore
