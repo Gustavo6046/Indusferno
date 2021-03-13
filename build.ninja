@@ -31,7 +31,7 @@ build build/dbg/def_indus.ir: cc-dbg src/def_indus.c
 build build/dbg/place.ir: cc-dbg src/place.c
 build build/dbg/company.ir: cc-dbg src/company.c
 
-build build/dbg/infindus.o: ld $
+build bin/dbg/infindus.o: ld $
     build/libGDCC.ir $
     build/libc.ir $
     build/dbg/error.ir $
@@ -42,7 +42,7 @@ build build/dbg/infindus.o: ld $
     build/dbg/place.ir $
     build/dbg/company.ir
 
-build build/rel/infindus.o: ld $
+build bin/rel/infindus.o: ld $
     build/libGDCC.ir $
     build/libc.ir $
     build/rel/error.ir $
@@ -53,6 +53,6 @@ build build/rel/infindus.o: ld $
     build/rel/place.ir $
     build/rel/company.ir
 
-build build-dbg: phony build/dbg/infindus.o
-build build-rel: phony build/rel/infindus.o
+build build-dbg: phony bin/dbg/infindus.o
+build build-rel: phony bin/rel/infindus.o
 default build-dbg build-rel
