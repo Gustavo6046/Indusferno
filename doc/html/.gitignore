@@ -1,0 +1,4 @@
+# Folder where Doxygen documentation in HTML
+# is output. Please let this gitignore stay this way.
+*
+!.gitignore
