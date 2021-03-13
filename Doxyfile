@@ -3,6 +3,7 @@ WARNINGS        = YES
 RECURSIVE       = YES
 FILE_PATTERNS   = *.c *.h
 
-INPUT           = src/
-HTML_OUTPUT     = doc/html
-LATEX_OUTPUT    = doc/latex
+INPUT                   = src/ README.md
+USE_MDFILE_AS_MAINPAGE  = README.md
+HTML_OUTPUT             = doc/html
+LATEX_OUTPUT            = doc/latex

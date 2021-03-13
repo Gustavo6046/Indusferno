@@ -15,8 +15,8 @@ further. You have been noticed.
 
 ----
 
-_"If OpenTTD and Doom had a child, it would be Indusferno. And it would
-be nasty."_
+"If OpenTTD and Doom had a child, it would be Indusferno. And it would
+be nasty."
 
 This is a partial conversion themed around the art of moving cargo
 around, truly an industry in its own right. Capitalist Doomguy realizes
