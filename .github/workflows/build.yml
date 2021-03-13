@@ -72,7 +72,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: acs-build
-          latest: true
           path: ${{github.workspace}}/bin/
 
       - name: Run ZDCode
