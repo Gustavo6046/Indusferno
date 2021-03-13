@@ -27,11 +27,13 @@ adventures as he can.
 To this end, he will set up a transport network, funneling monsters
 into death traps to harvest cargo from them, and moving cargo around
 between industries to make more money and even new, processed kinds of
-cargo! Watch your empire rise, as the money keeps trickling in from
-all sides of your enterprise; or be a moron, and fail absolutely at
-moving any cargo, while your company is devoured by unpayable debts
-and ultimately dissolved, and back into the ground whence it rose.
-The choice is yours! (But you'll probably want to be the former!)
+cargo!
+
+Watch your empire rise, as the money keeps trickling in from all sides
+of your enterprise; or be a moron, and fail absolutely at moving any
+cargo, while your company is devoured by unpayable debts and ultimately
+dissolved, and back into the ground whence it rose. The choice is
+yours! [But you'll probably prefer the former! I'd bet!]
 
 Who would know those weird types were so ingenious in the
 industrialization of the underworld.
