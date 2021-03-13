@@ -2,7 +2,7 @@
 
 ----
 
-**WARNING: Please note that this project is in an UNFINISHED STATE,**
+**DISCLAIMER: Please note that this project is in an UNFINISHED STATE,**
 **and still far from completion. It is not yet in a playable state,**
 **or anywhere near that; thus, do not follow any of the instructions**
 **for downloading or playing this project, at this current state of.**
