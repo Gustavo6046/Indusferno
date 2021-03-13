@@ -82,5 +82,5 @@ jobs:
       - name: Upload built packages
         uses: actions/upload-artifact@v2
         with:
-          name: 
+          name: zdcode-build
           path: ${{github.workspace}}/pkg/
