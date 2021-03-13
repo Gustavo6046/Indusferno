@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Build (with Ninja and gdcc)
     runs-on: ubuntu-latest
 
     steps:
@@ -52,3 +52,35 @@ jobs:
         with:
           name: acs-build
           path: ${{github.workspace}}/build/
+
+  assemble:
+    name: Assemble (with ZDCode Zake)
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Python 3
+        run: sudo apt install python3 python3-pip
+
+      - name: Install ZDCode
+        run: sudo pip install zdcode
+
+      - name: Download last ACS build artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: acs-build
+          latest: true
+          path: ${{github.workspace}}/build
+
+      - name: Run ZDCode
+        working-directory: ${{github.workspace}}
+        run: python3 -m zdcode .
+      
+      - name: Upload built packages
+        uses: actions/upload-artifact@v2
+        with:
+          name: 
+          path: ${{github.workspace}}/doc
