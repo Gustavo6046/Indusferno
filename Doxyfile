@@ -1,3 +1,8 @@
-SOURCES = src/
-HTML_OUTPUT            = doc/html
-LATEX_OUTPUT           = doc/latex
+PROJECT_NAME    = Indusferno
+WARNINGS        = YES
+RECURSIVE       = YES
+FILE_PATTERNS   = *.c *.h
+
+INPUT           = src/
+HTML_OUTPUT     = doc/html
+LATEX_OUTPUT    = doc/latex
