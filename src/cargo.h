@@ -21,7 +21,7 @@
 
 
 /**
- * @brief A known cargo type.
+ * @brief A cargo type definition.
  */
 struct cargo_t {
     /**
