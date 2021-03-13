@@ -302,7 +302,8 @@ void industry_check_production(struct industry_t *const indus, const struct indu
  */
 void industry_accept_cargo(size_t ind_industry, size_t ind_accept, float amount);
 
-size_t industry_spawn(size_t ind_indus_type, );
+// TODO: decide on a way to do industry_spawn
+//size_t industry_spawn(size_t ind_indus_type, );
 
 
 #endif // INDUSTRY_H
