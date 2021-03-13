@@ -18,6 +18,7 @@ build build/stations.ir: cc src/stations.c
 build build/def_cargo.ir: cc src/def_cargo.c
 build build/def_indus.ir: cc src/def_indus.c
 build build/place.ir: cc src/place.c
+build build/company.ir: cc src/company.c
 
 build build/infindus.o: ld $
     # standard
@@ -31,3 +32,4 @@ build build/infindus.o: ld $
     build/def_cargo.ir $
     build/def_indus.ir $
     build/place.ir
+    build/company.ir
