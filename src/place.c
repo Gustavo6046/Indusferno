@@ -130,7 +130,7 @@ error_return_t spot_unlink(spot_handle_t ind_spot, float radius) {
     return 0;
 }
 
-size_t make_spot(float x, float y) {
+spot_handle_t make_spot(float x, float y) {
     if (place_num_spots >= MAX_SPOTS) {
         errorac(ERR_PLACE_MAXED_SPOTS, -1, "make_spot");
     }

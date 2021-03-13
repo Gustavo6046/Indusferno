@@ -35,7 +35,7 @@ static error_return_t _station_check_index(station_handle_t ind_station, const c
     return 0;
 }
 
-error_return_t station_add_cargo(station_handle_t ind_station, size_t cargo_type, int origin, float amount) {
+error_return_t station_add_cargo(station_handle_t ind_station, cargo_handle_t cargo_type, int origin, float amount) {
     int i;
 
     errcli(_station_check_index(ind_station, "station_add_cargo"));
@@ -65,7 +65,7 @@ error_return_t station_add_cargo(station_handle_t ind_station, size_t cargo_type
     return 0;
 }
 
-error_return_t station_get_cargo_amount(station_handle_t ind_station, size_t cargo_type, float *amount) {
+error_return_t station_get_cargo_amount(station_handle_t ind_station, cargo_handle_t cargo_type, float *amount) {
     int i;
 
     errcli(_station_check_index(ind_station, "station_get_cargo_amount"));
