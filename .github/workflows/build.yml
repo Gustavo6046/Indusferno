@@ -80,7 +80,8 @@ jobs:
 
       - name: Install ZDCode
         run: |
-          ~/.venv/bin/pip install zdcode
+          ~/.venv/bin/pip install --upgrade --upgrade-strategy eager \
+            zdcode
           ~/.venv/bin/pip freeze >~/.pipfreeze
 
       - name: Download last ACS build artifact
