@@ -9,7 +9,7 @@ on:
 
 jobs:
   doc:
-    name: Doxygen
+    name: Build Docs
     runs-on: ubuntu-latest
 
     steps:
