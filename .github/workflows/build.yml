@@ -74,9 +74,6 @@ jobs:
         with:
           path: ~/.venv
           key:  ${{ runner.os }}-assemble-${{ hashFiles('~/.pipfreeze') }}
-          restore-keys: |
-             ${{ runner.os }}-assemble-
-             ${{ runner.os }}-
 
       - name: Install ZDCode
         run: |
