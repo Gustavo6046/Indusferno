@@ -18,3 +18,16 @@ but gameplay will be quite different.
 And now, for a cute little industrial smokestack from the underworld. :)
 
 ![(Small rendition of the Indusferno logo)](indusferno-logo-small.svg)
+
+
+---- 
+
+Please note that this project is in an **UNFINISHED STATE**,
+and still far from completion. It is not yet in a playable state,
+or anywhere near that; thus, do not follow any of the instructions
+for downloading or playing this project, at this current state of.
+the project.
+
+This is a **Work in Progress**. Thus, keep in mind that the remainder
+of this document is currently meant for an actual, _finished_ state of
+this project in the near future, and read further.

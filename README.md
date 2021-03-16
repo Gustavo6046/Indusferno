@@ -11,7 +11,7 @@
 Friendly disclaimer that this is a **Work in Progress**. Thus, keep in
 mind that the remainder of this document is currently meant for an
 actual, _finished_ state of this project in the near future, and read
-further. You have been noticed.
+further.
 
 ----
 
