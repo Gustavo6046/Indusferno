@@ -40,3 +40,11 @@ jobs:
         with:
           name: doc-build
           path: ${{github.workspace}}/site
+
+      - name: Push documentation to branch
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: gh-pages
+          FOLDER: site
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
