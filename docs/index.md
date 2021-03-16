@@ -14,3 +14,5 @@ and Zandronum 3.
 The ultimate aim is to provide the first (and thus best) transportation
 tycoon simulator for ZDoom. It is, of course, still themed around Doom,
 but gameplay will be quite different.
+
+![(Small rendition of the Indusferno logo)](indusferno-logo-small.svg)
