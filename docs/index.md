@@ -15,4 +15,6 @@ The ultimate aim is to provide the first (and thus best) transportation
 tycoon simulator for ZDoom. It is, of course, still themed around Doom,
 but gameplay will be quite different.
 
+And now, for a cute little industrial smokestack from the underworld. :)
+
 ![(Small rendition of the Indusferno logo)](indusferno-logo-small.svg)
