@@ -73,13 +73,15 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.venv
-          key:  ${{ runner.os }}-assemble-${{ hashFiles('.venv/lib/**') }}
+          key:  ${{ runner.os }}-assemble-${{ hashFiles('~/.pipfreeze') }}
           restore-keys: |
              ${{ runner.os }}-assemble-
              ${{ runner.os }}-
 
       - name: Install ZDCode
-        run: ~/.venv/bin/pip install zdcode
+        run: |
+          ~/.venv/bin/pip install zdcode
+          ~/.venv/bin/pip freeze >~/.pipfreeze
 
       - name: Download last ACS build artifact
         uses: actions/download-artifact@v2

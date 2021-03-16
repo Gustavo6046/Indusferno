@@ -30,10 +30,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.venv
-          key: ${{ runner.os }}-docs-${{ hashFiles('.venv/lib/**') }}
-          restore-keys: |
-             ${{ runner.os }}-docs-
-             ${{ runner.os }}-
+          key: ${{ runner.os }}-docs-${{ hashFiles('~/.pipfreeze') }}
 
       - name: Install MkDocs with plugins
         run: |
@@ -43,6 +40,8 @@ jobs:
             mkdocs-git-committers-plugin-2 \
             git+https://github.com/rkoe/mkdocs-emailprotect \
             mkdocs-minify-plugin
+
+          ~/.venv/bin/pip freeze >~/.pipfreeze
 
       - name: Run MkDocs
         working-directory: ${{github.workspace}}
