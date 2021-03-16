@@ -17,39 +17,39 @@ build build/libGDCC.ir: makelib
 build build/libc.ir: makelib
     lib = libc
 
-build build/rel/error.ir: cc-rel src/error.c
-build build/rel/industry.ir: cc-rel src/industry.c
-build build/rel/stations.ir: cc-rel src/stations.c
-build build/rel/cargo.ir: cc-rel src/cargo.c
-build build/rel/place.ir: cc-rel src/place.c
-build build/rel/company.ir: cc-rel src/company.c
+build build/rel/m_error.ir: cc-rel src/m_error.c
+build build/rel/h_industry.ir: cc-rel src/h_industry.c
+build build/rel/h_station.ir: cc-rel src/h_station.c
+build build/rel/h_cargo.ir: cc-rel src/h_cargo.c
+build build/rel/i_place.ir: cc-rel src/i_place.c
+build build/rel/h_company.ir: cc-rel src/h_company.c
 
-build build/dbg/error.ir: cc-dbg src/error.c
-build build/dbg/industry.ir: cc-dbg src/industry.c
-build build/dbg/stations.ir: cc-dbg src/stations.c
-build build/dbg/cargo.ir: cc-dbg src/cargo.c
-build build/dbg/place.ir: cc-dbg src/place.c
-build build/dbg/company.ir: cc-dbg src/company.c
+build build/dbg/m_error.ir: cc-dbg src/m_error.c
+build build/dbg/h_industry.ir: cc-dbg src/h_industry.c
+build build/dbg/h_station.ir: cc-dbg src/h_station.c
+build build/dbg/h_cargo.ir: cc-dbg src/h_cargo.c
+build build/dbg/i_place.ir: cc-dbg src/i_place.c
+build build/dbg/h_company.ir: cc-dbg src/h_company.c
 
 build bin/dbg/infindus.o: ld $
     build/libGDCC.ir $
     build/libc.ir $
-    build/dbg/error.ir $
-    build/dbg/industry.ir $
-    build/dbg/stations.ir $
-    build/dbg/cargo.ir $
-    build/dbg/place.ir $
-    build/dbg/company.ir
+    build/dbg/m_error.ir $
+    build/dbg/h_industry.ir $
+    build/dbg/h_station.ir $
+    build/dbg/h_cargo.ir $
+    build/dbg/i_place.ir $
+    build/dbg/h_company.ir
 
 build bin/rel/infindus.o: ld $
     build/libGDCC.ir $
     build/libc.ir $
-    build/rel/error.ir $
-    build/rel/industry.ir $
-    build/rel/stations.ir $
-    build/rel/cargo.ir $
-    build/rel/place.ir $
-    build/rel/company.ir
+    build/rel/m_error.ir $
+    build/rel/h_industry.ir $
+    build/rel/h_station.ir $
+    build/rel/h_cargo.ir $
+    build/rel/i_place.ir $
+    build/rel/h_company.ir
 
 build build-dbg: phony bin/dbg/infindus.o
 build build-rel: phony bin/rel/infindus.o
