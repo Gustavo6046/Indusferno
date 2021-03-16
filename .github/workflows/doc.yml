@@ -37,7 +37,7 @@ jobs:
 
       - name: Install MkDocs with plugins
         run: |
-          ~/.venv/bin/pip install --user \
+          ~/.venv/bin/pip install \
             git+https://github.com/pieterdavid/mkdocs-doxygen-plugin \
             mkdocs-latest-release-plugin \
             mkdocs-git-committers-plugin-2 \
