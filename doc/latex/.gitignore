@@ -1,4 +1,0 @@
-# Folder where Doxygen documentation in LaTeX
-# is output. Please let this gitignore stay this way.
-*
-!.gitignore

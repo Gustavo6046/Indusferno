@@ -1,0 +1,21 @@
+site_name: Indusferno
+nav:
+  - Home: index.md
+  - About: about.md
+  - Quickstart: quickstart.md
+  - Setup-Verbose: running.md
+  - C Reference: c_reference/index.html
+
+plugins:
+  - search
+  - git-committers
+  - git-latest-release
+  - emailprotect
+  - minify
+  - doxygen:
+      packages:
+        - c_reference:
+            url: .
+
+theme: readthedocs
+

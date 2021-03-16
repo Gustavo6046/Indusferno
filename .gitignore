@@ -1,5 +1,7 @@
-/.vscode/
-/build/
+.vscode/
+build/
+site/
 .ninja_log
+doxygen.log
 
 *.pk3

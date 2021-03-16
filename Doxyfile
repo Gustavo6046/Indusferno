@@ -1,9 +1,8 @@
-PROJECT_NAME    = Indusferno
-WARNINGS        = YES
-RECURSIVE       = YES
-FILE_PATTERNS   = *.c *.h
-
-INPUT                   = src/ README.md
-USE_MDFILE_AS_MAINPAGE  = README.md
-HTML_OUTPUT             = doc/html
-LATEX_OUTPUT            = doc/latex
+PROJECT_NAME            = Indusferno
+WARNINGS                = YES
+RECURSIVE               = YES
+FILE_PATTERNS           = *.c *.h *.md
+INPUT                   = src/ docs/doxygen
+USE_MDFILE_AS_MAINPAGE  = docs/doxygen/main.md
+GENERATE_LATEX          = NO
+LAYOUT_FILE = DoxygenLayout.xml

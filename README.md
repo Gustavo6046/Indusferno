@@ -1,4 +1,4 @@
-# Indusferno
+![#Indusferno logo](indusferno-logo.svg)
 
 ----
 
@@ -15,8 +15,10 @@ further. You have been noticed.
 
 ----
 
-"If OpenTTD and Doom had a child, it would be Indusferno. And it would
-be nasty."
+<center>
+*"If Doom and OpenTTD had a child, it would be Indusferno... And it would
+be nasty and full of monsters. And also very monopolistic."*
+</center>
 
 This is a partial conversion themed around the art of moving cargo
 around, truly an industry in its own right. Capitalist Doomguy realizes
@@ -44,9 +46,16 @@ See the [Releases](https://github.com/Gustavo6046/Indusferno/releases)
 section (of this project's GitHub repository), and download a pre-built
 package of this mod.
 
-The built package on its own is cross-platform,
+You will most likely only need the "rel" build.
 
-You will most likely only need the "rel" build. The "dbg" build is for
+Each build will include both an "asset" and a "code" PK3 files. You will
+need both of them to play Indusferno. This is so minor ZDCode changes
+that don't affect other assets only require the "code" file to be
+replaced with a newer version, without forcing players to download the
+large "asset" file yet another time.
+
+Using them is not complicated. Simply load both at the same time, as
+instructed in the section below.
 
 
 ## Running
@@ -160,17 +169,19 @@ $ python3 -m zdcode
 
 ### Documentation
 
-To build documentation, simply use the provided Doxyfile, and build
-with Doxygen:
+To build documentation, use [MkDocs](https://www.mkdocs.org/). Once it
+is built, it can be found in the `site/` subdirectory.
 
 ```console
-$ doxygen Doxyfile
-
-...
+$ mkdocs build
+INFO    -  Cleaning site directory 
+INFO    -  Building documentation to directory: /home/gustavo6046/Projects/Indusferno/site 
+INFO    -  Running doxygen for current directory with default config, saving into /home/gustavo6046/Projects/Indusferno/site/doxygen 
+INFO    -  Documentation built in 1.34 seconds
 
   # now documentation is built, e.g.
-$ file doc/html/index.html
-doc/html/index.html: HTML document, ASCII text
+$ file site/index.html
+site/index.html: HTML document, ASCII text
 ```
 
 ## Contributing
