@@ -1,0 +1,25 @@
+digraph "src/m_error.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/m_error.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Error handling and signal propagation."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="src/h_company.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$h__company_8c.html",tooltip="Company implementation and their interactions with the world."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="src/h_company.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$h__company_8h.html",tooltip="Companies and their assets."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="src/h_industry.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$h__industry_8h.html",tooltip="Industries."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="src/h_industry.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$h__industry_8c.html",tooltip="Industry logic."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="src/h_station.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$h__station_8h.html",tooltip="Stations."];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="src/i_place.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$i__place_8h.html",tooltip="Map spot graph."];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="src/i_place.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$i__place_8c.html",tooltip="Map spot graph implementation."];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="src/m_error.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$m__error_8c.html",tooltip="Error handling logic."];
+}

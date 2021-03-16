@@ -1,0 +1,15 @@
+digraph "src/h_cargo.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/h_cargo.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Cargo."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="src/h_cargo.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$h__cargo_8c.html",tooltip="Cargo type definitions."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="src/h_industry.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$h__industry_8h.html",tooltip="Industries."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="src/h_industry.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$h__industry_8c.html",tooltip="Industry logic."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="src/h_station.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$h__station_8h.html",tooltip="Stations."];
+}
