@@ -1,9 +1,21 @@
 /**
- * @file error.h
+ * @file m_error.h
  * @author Gustavo Rehermann (rehermann6046@gmail.com)
- * @brief Error codes.
+ * @brief Error handling and signal propagation.
  * @version added in 0.1
  * @date 2021-03-11
+ * 
+ * Error signals in Indusferno, unlike the name might imply, actually
+ * are responsible for handling many different kinds of edge cases,
+ * most of which are, in fact, not fatal. Some, such as maxing out the
+ * loan limit, aren't even out of the realm of possibilities in regular
+ * gameplay, and thus aren't printed to the console even in the debug
+ * build.
+ * 
+ * Many different error signal definitions exist within Indusferno, and
+ * each serve their own specific purpose, but usually are grouped with
+ * other error signals that are used in a similar context, such as
+ * errors related to industry code.
  *
  * @copyright Copyright (c)Gustavo Ramos Rehermann 2021. The MIT License.
  */

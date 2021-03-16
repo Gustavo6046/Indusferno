@@ -1,5 +1,5 @@
 /**
- * @file industry.h
+ * @file h_industry.h
  * @author Gustavo Rehermann (rehermann6046@gmail.com)
  * @brief Industries.
  * @version added in 0.1
@@ -16,8 +16,8 @@
 #include <stddef.h>
 #include <stdio.h>
 
-#include "error.h"
-#include "cargo.h"
+#include "m_error.h"
+#include "h_cargo.h"
 
 
 /**

@@ -1,5 +1,5 @@
 /**
- * @file company.h
+ * @file h_company.h
  * @author Gustavo Rehermann (rehermann6046@gmail.com)
  * @brief Companies and their assets.
  * @version added in 0.1
@@ -13,7 +13,7 @@
 
 #include <stddef.h>
 
-#include "error.h"
+#include "m_error.h"
 
 
 /**

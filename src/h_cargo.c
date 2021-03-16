@@ -1,5 +1,5 @@
 /**
- * @file cargo.c
+ * @file h_cargo.c
  * @author Gustavo Rehermann (rehermann6046@gmail.com)
  * @brief Cargo type definitions.
  * @version added in 0.1
@@ -10,7 +10,7 @@
  * All cargo definitions.
  */
 
-#include "cargo.h"
+#include "h_cargo.h"
 
 
 const struct cargo_t cargo_types[] = {

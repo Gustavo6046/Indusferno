@@ -1,5 +1,5 @@
 /**
- * @file stations.c
+ * @file h_stations.c
  * @author Gustavo Rehermann (rehermann6046@gmail.com)
  * @brief Station logic.
  * @version added in 0.1
@@ -13,7 +13,7 @@
 
 #include <stddef.h>
 
-#include "stations.h"
+#include "h_station.h"
 
 
 /**

@@ -1,5 +1,5 @@
 /**
- * @file place.c
+ * @file i_place.c
  * @author Gustavo Rehermann (rehermann6046@gmail.com)
  * @brief Map spot graph implementation.
  * @version added in 0.1
@@ -8,8 +8,8 @@
  * @copyright Copyright (c)Gustavo Ramos Rehermann 2021. The MIT License.
  */
 
-#include "place.h"
-#include "util.h"
+#include "i_place.h"
+#include "m_util.h"
 
 
 static struct spotmap_t place_spotmap;

@@ -1,5 +1,5 @@
 /**
- * @file company.c
+ * @file h_company.c
  * @author Gustavo Rehermann (rehermann6046@gmail.com)
  * @brief Company implementation and their interactions with the world.
  * @version added in 0.1
@@ -10,8 +10,8 @@
 
 #include <string.h>
 
-#include "error.h"
-#include "company.h"
+#include "m_error.h"
+#include "h_company.h"
 
 
 static struct company_t companies[MAX_COMPANIES];

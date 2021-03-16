@@ -1,16 +1,21 @@
 /**
- * @file place.h
+ * @file i_place.h
  * @author Gustavo Rehermann (rehermann6046@gmail.com)
  * @brief Map spot graph.
  * @version added in 0.1
  * @date 2021-03-12
  *
- * An list of locations in the map where industries can spawn.
- *
- * Each location has a list of edges to other nearby locations,
- * preventing industries with matching accept types from spawning
- * too close to industries with matching supply types, in a sort of
- * cellular-automata-esque propagation.
+ * A list of locations in the map where map features, such as
+ * industries, can spawn.
+ * 
+ * Places serve as a way to define specific waypoints in the level,
+ * where there is room for a map feature to spawn. They are defined
+ * manually in the map itself, rather than generated automatically in
+ * the code.
+ * 
+ * In the initialization process, once all IndusfernoMapSpot
+ * actors are done adding their own positions to Indusferno's
+ * internal spot list, the map feature generation code is run.
  *
  * @copyright Copyright (c)Gustavo Ramos Rehermann 2021. The MIT License.
  */
@@ -19,7 +24,7 @@
 #define PLACE_H
 
 #include <stddef.h>
-#include "error.h"
+#include "m_error.h"
 
 
 /**

@@ -1,5 +1,5 @@
 /**
- * @file stations.h
+ * @file h_station.h
  * @author Gustavo Rehermann (rehermann6046@gmail.com)
  * @brief Stations.
  * @version added in 0.1
@@ -12,8 +12,8 @@
 #define STATIONS_H
 
 #include <stddef.h>
-#include "error.h"
-#include "cargo.h"
+#include "m_error.h"
+#include "h_cargo.h"
 
 /**
  * @brief The maximum number of distinct cargo loads in a single station.

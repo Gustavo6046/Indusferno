@@ -1,5 +1,5 @@
 /**
- * @file industry.c
+ * @file h_industry.c
  * @author Gustavo Rehermann (rehermann6046@gmail.com)
  * @brief Industry logic.
  * @version added in 0.1
@@ -10,8 +10,8 @@
  * The logic of how industries operate and produce.
  */
 
-#include "industry.h"
-#include "error.h"
+#include "h_industry.h"
+#include "m_error.h"
 
 
 static struct industry_t industries[MAX_INDUSTRIES];

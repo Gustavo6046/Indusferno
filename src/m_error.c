@@ -1,5 +1,5 @@
 /**
- * @file error.c
+ * @file m_error.c
  * @author Gustavo Rehermann (rehermann6046@gmail.com)
  * @brief Error handling logic.
  * @version added in 0.1
@@ -10,7 +10,7 @@
 
 #include <stdio.h>
 
-#include "error.h"
+#include "m_error.h"
 
 
 /**
