@@ -72,7 +72,7 @@ jobs:
       - name: Install ZDCode
         run: |
           ~/.venv/bin/pip install --upgrade --upgrade-strategy eager \
-            'zdcode>=2.12.3'
+            git+https://github.com/zeta-group/zdcode
           ~/.venv/bin/pip freeze >~/.pipfreeze
 
       - name: Download last ACS build artifact
