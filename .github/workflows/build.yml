@@ -77,7 +77,7 @@ jobs:
 
       - name: Install ZDCode
         run: |
-          ~/.venv/bin/pip install --upgrade --upgrade-strategy eager \
+          ~/.venv/bin/pip install -U --upgrade-strategy eager \
             zdcode
           ~/.venv/bin/pip freeze >~/.pipfreeze
 
