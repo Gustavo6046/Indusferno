@@ -31,7 +31,7 @@ build build/dbg/h_cargo.ir: cc-dbg src/h_cargo.c
 build build/dbg/i_place.ir: cc-dbg src/i_place.c
 build build/dbg/h_company.ir: cc-dbg src/h_company.c
 
-build bin/dbg/acs/infindus.o: ld $
+build bin/dbg/infindus.o: ld $
     build/libGDCC.ir $
     build/libc.ir $
     build/dbg/m_error.ir $
@@ -41,7 +41,7 @@ build bin/dbg/acs/infindus.o: ld $
     build/dbg/i_place.ir $
     build/dbg/h_company.ir
 
-build bin/rel/acs/infindus.o: ld $
+build bin/rel/infindus.o: ld $
     build/libGDCC.ir $
     build/libc.ir $
     build/rel/m_error.ir $
@@ -51,6 +51,6 @@ build bin/rel/acs/infindus.o: ld $
     build/rel/i_place.ir $
     build/rel/h_company.ir
 
-build build-dbg: phony bin/dbg/acs/infindus.o
-build build-rel: phony bin/rel/acs/infindus.o
+build build-dbg: phony bin/dbg/infindus.o
+build build-rel: phony bin/rel/infindus.o
 default build-dbg build-rel
