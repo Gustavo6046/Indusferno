@@ -71,8 +71,8 @@ jobs:
 
       - name: Install ZDCode
         run: |
-          ~/.venv/bin/pip install -U --upgrade-strategy eager \
-            zdcode
+          ~/.venv/bin/pip install --upgrade --upgrade-strategy eager \
+            'zdcode>=2.12.3'
           ~/.venv/bin/pip freeze >~/.pipfreeze
 
       - name: Download last ACS build artifact
