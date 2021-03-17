@@ -69,12 +69,6 @@ jobs:
         run: |
           python3 -m venv ~/.venv
 
-      - name: Cache Python venv
-        uses: actions/cache@v2
-        with:
-          path: ~/.venv
-          key:  ${{ runner.os }}-assemble-${{ hashFiles('~/.pipfreeze') }}
-
       - name: Install ZDCode
         run: |
           ~/.venv/bin/pip install -U --upgrade-strategy eager \
