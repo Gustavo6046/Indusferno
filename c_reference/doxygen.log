@@ -90,9 +90,9 @@ Finding anchors and sections in the documentation...
 Transferring functsh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/i__place_8c__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/i__place_8c__incl.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/h__cargo_8h__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/h__cargo_8h__incl.png"'
-sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/graph_legend.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/graph_legend.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/h__cargo_8h__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/h__cargo_8h__incl.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/m__error_8h__dep__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/m__error_8h__dep__incl.png"'
 sh: 1: dot: not found
@@ -104,29 +104,29 @@ error: Problems running dot: exit code=127, command='dot', arguments='"/home/run
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/structspotmap__t__coll__graph.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/structspotmap__t__coll__graph.png"'
 sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/m__error_8c__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/m__error_8c__incl.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/structstation__t__coll__graph.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/structstation__t__coll__graph.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/h__company_8h__dep__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/h__company_8h__dep__incl.png"'
 sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/i__place_8h__dep__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/i__place_8h__dep__incl.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/m__error_8c__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/m__error_8c__incl.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/h__station_8h__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/h__station_8h__incl.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/m__util_8h__dep__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/m__util_8h__dep__incl.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/h__industry_8h__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/h__industry_8h__incl.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/i__place_8h__dep__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/i__place_8h__dep__incl.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/h__cargo_8c__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/h__cargo_8c__incl.png"'
 sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/m__util_8h__dep__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/m__util_8h__dep__incl.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/h__industry_8h__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/h__industry_8h__incl.png"'
+sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/h__industry_8h__dep__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/h__industry_8h__dep__incl.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/h__company_8h__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/h__company_8h__incl.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/i__place_8h__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/i__place_8h__incl.png"'
 sh: 1: dot: not found
 error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/h__company_8c__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/h__company_8c__incl.png"'
-sh: 1: dot: not found
-error: Problems running dot: exit code=127, command='dot', arguments='"/home/runner/work/Indusferno/Indusferno/html/h__company_8h__incl.dot" -Tpng -o "/home/runner/work/Indusferno/Indusferno/html/h__company_8h__incl.png"'
 error: problems opening map file /home/runner/work/Indusferno/Indusferno/html/h__cargo_8c__incl.map for inclusion in the docs!
 If you installed Graphviz/dot after a previous failing run, 
 try deleting the output directory and rerun doxygen.
