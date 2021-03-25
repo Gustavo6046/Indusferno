@@ -137,10 +137,11 @@ release), simply invoke the `ninja` command:
 
 ```console
 $ ninja
+```
 
-...
+Now the ACS files are built! For instance,
 
-  # now the ACS objects are built, e.g.
+```console
 $ file bin/dbg/infindus.o bin/rel/infindus.o
 bin/dbg/infindus.o: GLS_BINARY_LSB_FIRST
 bin/rel/infindus.o: GLS_BINARY_LSB_FIRST
@@ -155,17 +156,15 @@ into ZDoom-ready packages, which will be put into `pkg`.
 
 ```console
 # hint: use pyenv or venv to install packages in self-contained
-  # python environments
+#   python environments
 $ python3 -m pip install zdcode
-...
 ```
 
-Now you only have to actually build the omd.
+Now you only have to actually build the mod.
 
 ```console
 $ python3 -m zdcode
-...
-
+```
 
 ### Documentation
 
