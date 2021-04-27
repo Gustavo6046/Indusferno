@@ -1,5 +1,7 @@
 # About Indusferno
 
+![(Small rendition of the Indusferno logo)](indusferno-logo-small.svg)
+
 -----
 
 ## The Creative Pitch.
@@ -40,3 +42,4 @@ It also aims to bring a whole new experience that has never been
 previously realized within Doom, one that would more easily fit into
 the simulation/tycoon game genre than that of first person shooters,
 while still providing a simple and seamless player experience.
+
